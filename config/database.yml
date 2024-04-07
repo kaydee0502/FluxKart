@@ -1,0 +1,22 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql2
+  username: kaydee
+  password: kaydee8080
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: utf8
+
+development:
+  <<: *default
+  database: identity-reconcilation
+
+test:
+  <<: *default
+  database: identity-reconcilation
+
