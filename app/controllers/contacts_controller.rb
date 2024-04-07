@@ -28,6 +28,7 @@ class ContactsController < ApplicationController
   private
 
   def set_records
+    # Check if record with current params combination exists
     single_contact = Contact.where(email: params[:email], phoneNumber: params[:phoneNumber]).last
     if single_contact.present?
       @primary = find_primary_contact(single_contact)

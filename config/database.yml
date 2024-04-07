@@ -6,9 +6,9 @@
 #
 default: &default
   adapter: mysql2
-  username: kaydee
-  password: kaydee8080
-  host: localhost
+  username: <%= ENV.fetch("MYSQL_USER") { 5 } %>
+  password: <%= ENV.fetch("MYSQL_PASSWORD") { 5 } %>
+  host: db
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: utf8
 
@@ -18,5 +18,5 @@ development:
 
 test:
   <<: *default
-  database: identity-reconcilation
+  database: identity-reconcilation-test
 

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:8
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file: .env
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && rails server -b '0.0.0.0'"
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  db_data:

@@ -64,7 +64,6 @@ GEM
       net-smtp
     method_source (1.0.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.5)
     minitest (5.22.3)
     mysql2 (0.5.6)
     net-imap (0.3.7)
@@ -77,6 +76,8 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.1)
+    nokogiri (1.15.6-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.15.6-arm64-darwin)
       racc (~> 1.4)
     puma (3.12.6)
@@ -125,8 +126,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.3)
-      mini_portile2 (~> 2.8.0)
     thor (1.3.1)
     thread_safe (0.3.6)
     timeout (0.4.1)
@@ -137,6 +136,7 @@ GEM
     websocket-extensions (0.1.5)
 
 PLATFORMS
+  aarch64-linux-musl
   arm64-darwin-22
 
 DEPENDENCIES
@@ -147,8 +147,7 @@ DEPENDENCIES
   rails (~> 5.1.7)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   tzinfo-data
 
 BUNDLED WITH
-   2.4.20
+   2.4.0
